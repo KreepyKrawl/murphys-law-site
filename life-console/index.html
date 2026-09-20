@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#000000">
+<title>Console</title>
+<link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+<div id="static" aria-hidden="true"></div>
+<div id="observerField" aria-hidden="true">
+  <svg viewBox="0 0 1000 1000" class="observer observer-back"><circle cx="500" cy="500" r="332"/><path d="M500 112 850 720H150Z"/><path d="M250 510Q500 300 750 510Q500 720 250 510Z"/><circle cx="500" cy="510" r="86"/><circle cx="500" cy="510" r="16"/></svg>
+  <svg viewBox="0 0 1000 1000" class="observer observer-front"><circle cx="500" cy="500" r="332"/><path d="M500 112 850 720H150Z"/><path d="M250 510Q500 300 750 510Q500 720 250 510Z"/><circle cx="500" cy="510" r="86"/><circle cx="500" cy="510" r="16"/></svg>
+</div>
+<header id="ticker"><div class="liveDot"></div><div id="tickerWindow"><div id="tickerTrack"></div></div><button id="attentionPull" class="topControl" title="Pull highest attention">PULL</button></header>
+<main id="viewport">
+  <div id="workspace"></div>
+  <div id="focusDim"></div>
+  <section id="metaScene" aria-label="Display interface">
+    <div class="metaGlyph" id="metaGlyph">
+      <svg viewBox="0 0 400 400" class="mg back"><circle cx="200" cy="200" r="142"/><path d="M200 34 350 294H50Z"/><path d="M88 205Q200 108 312 205Q200 302 88 205Z"/><circle cx="200" cy="205" r="38"/><circle cx="200" cy="205" r="8"/></svg>
+      <svg viewBox="0 0 400 400" class="mg front"><circle cx="200" cy="200" r="142"/><path d="M200 34 350 294H50Z"/><path d="M88 205Q200 108 312 205Q200 302 88 205Z"/><circle cx="200" cy="205" r="38"/><circle cx="200" cy="205" r="8"/></svg>
+    </div>
+    <div id="metaNodes"></div>
+    <div id="metaReadout"><div id="metaType"></div><div id="metaTitle"></div><div id="metaState"></div></div>
+    <div id="metaHint">← → SELECT · ↑ / PINCH OPEN · ↓ BACK</div>
+    <div id="metaPanel"><div id="metaPanelShell"><div id="metaPanelType"></div><h2 id="metaPanelTitle"></h2><div id="metaPanelRows"></div><div class="metaActions"><button id="metaShape">□ / ○</button><button id="metaClose">BACK</button></div></div></div>
+  </section>
+</main>
+<footer id="dock"><button id="restoreAll" class="dockBtn">LAYOUT</button><div id="objectBay"></div><input id="command" autocomplete="off" spellcheck="false" placeholder="ask · open · find · resume · control…"><button id="displayMode" class="dockBtn">DISPLAY</button></footer>
+<div id="toast"></div>
+<script src="app.js?v=8"></script>
+</body>
+</html>
