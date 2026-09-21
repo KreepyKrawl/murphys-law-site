@@ -1,11 +1,12 @@
 {
   "channel": "prototype",
-  "version": "0.10.1",
+  "version": "0.11.0",
   "project": "standalone-console",
   "updated": "2026-09-20",
   "state_model": "cloud-canonical",
   "viewport_model": ["desktop", "mobile", "meta"],
   "backend": "supabase-live",
+  "transport": ["rpc", "realtime-broadcast", "presence", "polling-fallback"],
   "supabase_project_ref": "ouqnyndcubmhreqbwufe",
-  "notes": "WORLD sync is bound to the live Life Console Supabase project. Canonical object, view, link, event, archive, and pairing RPCs are installed and verified."
+  "notes": "Corrupted v0.10 WORLD client replaced. v0.11 adds canonical object/layout sync, cross-device pairing, Realtime invalidation and device presence, with polling fallback."
 }
