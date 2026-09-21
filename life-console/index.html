@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#000000">
 <meta name="color-scheme" content="dark">
 <title>Console</title>
-<link rel="manifest" href="manifest.webmanifest">
 <link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="hotfix091.css?v=091">
 </head>
 <body>
 <div id="static" aria-hidden="true"></div>
@@ -26,7 +26,7 @@
   <div id="focusDim"></div>
   <div id="dropHint"><div>DROP ANYTHING</div><small>files · links · text · media</small></div>
   <section id="metaScene" aria-label="Display interface">
-    <div class="metaCore">
+    <div class="metaCore" id="metaCore">
       <div class="metaRing r1"></div><div class="metaRing r2"></div><div class="metaEye"></div>
       <svg viewBox="0 0 400 400" class="metaGlyph back"><circle cx="200" cy="200" r="142"/><path d="M200 34 350 294H50Z"/><path d="M88 205Q200 108 312 205Q200 302 88 205Z"/><circle cx="200" cy="205" r="38"/></svg>
       <svg viewBox="0 0 400 400" class="metaGlyph front"><circle cx="200" cy="200" r="142"/><path d="M200 34 350 294H50Z"/><path d="M88 205Q200 108 312 205Q200 302 88 205Z"/><circle cx="200" cy="205" r="38"/></svg>
@@ -62,8 +62,9 @@
 </div>
 <input id="filePicker" type="file" hidden multiple accept="*/*">
 <div id="toast"></div>
-<script src="data.js?v=9"></script>
-<script src="core.js?v=9"></script>
-<script src="meta.js?v=9"></script>
+<script src="compat091.js?v=091"></script>
+<script src="data.js?v=091"></script>
+<script src="core.js?v=091"></script>
+<script src="meta.js?v=091"></script>
 </body>
 </html>
