@@ -8,6 +8,7 @@
 <title>Console</title>
 <link rel="stylesheet" href="style.css?v=9">
 <link rel="stylesheet" href="hotfix091.css?v=091">
+<link rel="stylesheet" href="world-v010.css?v=010">
 </head>
 <body>
 <div id="static" aria-hidden="true"></div>
@@ -51,13 +52,13 @@
     <div class="launcherGrid">
       <button data-spawn="file"><b>FILE</b><small>PDF · image · video · audio · text</small></button>
       <button data-spawn="url"><b>URL</b><small>web · Google · YouTube · Vimeo</small></button>
-      <button data-spawn="note"><b>NOTE</b><small>freeform local object</small></button>
+      <button data-spawn="note"><b>NOTE</b><small>freeform object</small></button>
       <button data-spawn="chat"><b>CHATGPT</b><small>assistant surface / bridge</small></button>
       <button data-spawn="browser"><b>BROWSER</b><small>open a live web surface</small></button>
       <button data-spawn="terminal"><b>TERMINAL</b><small>machine bridge surface</small></button>
     </div>
     <div class="launcherInput"><input id="urlInput" placeholder="Paste a URL and press Enter"><button id="openUrl">OPEN</button></div>
-    <div class="privacyNote">LOCAL OBJECTS STAY IN THIS BROWSER. PRIVATE ACCOUNT DATA IS NOT WRITTEN TO THE PUBLIC HOST.</div>
+    <div class="privacyNote">CLOUD OBJECTS FOLLOW YOU. LOCAL BINARY FILES REMAIN TRANSIENT UNTIL PRIVATE STORAGE PROMOTION IS ENABLED.</div>
   </div>
 </div>
 <input id="filePicker" type="file" hidden multiple accept="*/*">
@@ -66,5 +67,7 @@
 <script src="data.js?v=091"></script>
 <script src="core.js?v=091"></script>
 <script src="meta.js?v=091"></script>
+<script src="supabase-config.js?v=010"></script>
+<script src="world-v010.js?v=010"></script>
 </body>
 </html>
