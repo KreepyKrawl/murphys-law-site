@@ -1,0 +1,19 @@
+(()=>{'use strict';
+const C=window.CONSOLE||{},$=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let mode='',lastSnap=null;
+function toast(t){let e=$('#toast');if(!e)return;e.textContent=t;e.classList.add('show');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('show'),1600)}
+function activate(name){mode=name;$$('.worldTabs button').forEach(b=>b.classList.toggle('active',b.dataset.extra===name));render()}
+function summon(o){let f=$(`.frame[data-cloud-id="${CSS.escape(o.id)}"]`);if(o.source?.type==='builtin'&&o.source?.builtin_id){C.open?.(o.source.builtin_id);return}if(f){f.classList.remove('dismissed');$('.focus',f)?.click();return}C.world?.sync?.();toast('Synchronizing object')}
+function makeNote(){if(!C.spawn)return toast('Object surface unavailable');let f=C.spawn({name:'Shared note',kind:'NOTE',state:'READY',html:'<textarea class="noteArea" placeholder="Shared across WORLD…"></textarea>'},{size:360});setTimeout(()=>$('.noteArea',f)?.focus(),60);toast('Shared note created')}
+function renderLibrary(root,s){let objects=s?.objects||[];root.innerHTML=`<div class="worldToolbar"><input id="wlSearch" placeholder="search WORLD"><button id="wlRefresh">REFRESH</button><button id="wlNew">+ NOTE</button></div><div id="wlCount" class="syncDetail"><b>${objects.length} CANONICAL OBJECT${objects.length===1?'':'S'}</b><span>Content is shared; geometry remains viewport-specific.</span></div><div class="worldObjectList">${objects.map(o=>`<button class="worldObject" data-world-id="${esc(o.id)}"><span class="worldGlyph">${esc((o.kind||'O').slice(0,2))}</span><span><b>${esc(o.title||'Untitled')}</b><small>${esc(o.kind||'OBJECT')} · ${esc(o.state||'READY')}</small></span><em>●</em></button>`).join('')||'<div class="worldEmpty">NO CLOUD OBJECTS YET<br><br>Create a note or open a URL on any paired device.</div>'}</div>`;$('#wlRefresh').onclick=()=>C.world?.sync?.();$('#wlNew').onclick=makeNote;$('#wlSearch').oninput=e=>{$$('.worldObject',root).forEach(x=>x.hidden=!x.textContent.toLowerCase().includes(e.target.value.toLowerCase()))};$$('.worldObject',root).forEach(x=>x.onclick=()=>{let o=objects.find(y=>y.id===x.dataset.worldId);if(o)summon(o)})}
+function ago(t){let d=(Date.now()-new Date(t).getTime())/1000;if(!Number.isFinite(d))return'';if(d<60)return Math.max(0,Math.round(d))+'s';if(d<3600)return Math.round(d/60)+'m';if(d<86400)return Math.round(d/3600)+'h';return Math.round(d/86400)+'d'}
+function renderHistory(root,s){let ev=(s?.events||[]).slice(0,80);root.innerHTML=`<div class="historyRail">${ev.map(e=>`<div class="historyItem"><span></span><div><b>${esc((e.event_type||'CHANGE').toUpperCase())}</b><small>${esc(e.object_title||e.object_id||'WORLD')}</small><p>${esc(JSON.stringify(e.payload||{}))}</p></div><time>${esc(ago(e.created_at))}</time></div>`).join('')||'<div class="worldEmpty">WORLD history will appear here as shared objects are created.</div>'}</div>`}
+function render(){if(!mode)return;let root=$('#worldBody'),s=C.world?.state?.snap;if(!root)return;if(mode==='library')renderLibrary(root,s);else if(mode==='history')renderHistory(root,s)}
+function install(){let tabs=$('.worldTabs');if(!tabs||tabs.querySelector('[data-extra="library"]'))return false;for(const [id,label] of [['library','LIBRARY'],['history','HISTORY']]){let b=document.createElement('button');b.dataset.extra=id;b.textContent=label;b.onclick=e=>{e.stopPropagation();activate(id)};tabs.prepend(b)}
+// When native WORLD tabs are chosen, relinquish the custom renderer.
+$$('[data-tab]',tabs).forEach(b=>b.addEventListener('click',()=>{mode=''},true));
+return true}
+let tries=0,t=setInterval(()=>{if(install()||++tries>40)clearInterval(t)},125);
+setInterval(()=>{let s=C.world?.state?.snap;if(mode&&s!==lastSnap){lastSnap=s;render()}},700);
+})();
