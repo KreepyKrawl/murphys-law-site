@@ -1,0 +1,42 @@
+/* v0.9.1 visibility + Meta stability */
+:root{--white:#fff!important;--red:#ff1830!important}
+#static{opacity:.08!important}
+#signalField{opacity:.25!important}
+.observer{stroke-width:2.2!important}.observer.front{opacity:.48!important}.observer.back{opacity:.38!important}
+.shell{background:#020202!important;border-color:rgba(255,255,255,.72)!important;box-shadow:0 0 0 1px rgba(255,255,255,.05),0 0 30px rgba(255,255,255,.08)!important}
+.frame.alert .shell{border-color:rgba(255,24,48,.96)!important;box-shadow:0 0 34px rgba(255,24,48,.28)!important}
+.name{font-size:11px!important;color:#fff!important}.kind{font-size:8px!important;color:#bbb!important}.state{font-size:9px!important;color:#fff!important}
+.kicker{font-size:10px!important}.hero{font-size:38px!important;font-weight:360!important}.sub{font-size:11px!important;color:#eee!important}.copy{font-size:12px!important;color:#eee!important}.muted{color:#bbb!important}
+.stat b{font-size:9px!important;color:#eee!important}.stat span,.row b{font-size:12px!important}.row small{font-size:10px!important;color:#bbb!important}.row em{font-size:9px!important}
+.tool{width:31px!important;height:31px!important;border-color:rgba(255,255,255,.62)!important;background:#000!important;color:#fff!important;font-size:11px!important}.tool:hover{background:#fff!important;color:#000!important}
+.action{border-color:rgba(255,255,255,.58)!important;color:#fff!important;font-size:9px!important;padding:8px 10px!important}
+#ticker{border-bottom-color:rgba(255,255,255,.5)!important}.tick{color:#eee!important}.topControl{color:#fff!important;border-left-color:rgba(255,255,255,.4)!important}
+#dock{border-top-color:rgba(255,255,255,.5)!important}.dockBtn,#command{border-color:rgba(255,255,255,.58)!important;color:#fff!important}.dockBtn.primary{border-color:#fff!important;box-shadow:0 0 16px rgba(255,255,255,.16)!important}
+#focusDim{background:rgba(0,0,0,.38)!important}.focus-mode .frame:not(.focused){opacity:.34!important}.frame.focused .shell{background:#000!important;border:2px solid #fff!important;box-shadow:0 0 0 1px rgba(255,255,255,.16),0 20px 65px rgba(0,0,0,.75)!important}
+.viewerBar .urlLabel{color:#bbb!important}.viewerBar button,.viewerButton{border-color:#777!important}.viewerBody{border-color:#444!important}.blockedFallback{color:#bbb!important;font-size:11px!important}.viewerText,.noteArea{color:#fff!important;font-size:12px!important}
+.overlay{background:rgba(0,0,0,.72)!important}.launcherShell{background:#000!important;border:2px solid #fff!important}.launcherGrid button{border-color:#555!important;color:#fff!important}.launcherGrid small{color:#bbb!important}.launcherInput input,.launcherInput button{border-color:#666!important;color:#fff!important}.privacyNote{color:#aaa!important}
+html[data-runtime-error="1"]:after{content:'RUNTIME RECOVERY ACTIVE';position:fixed;z-index:99999;right:8px;bottom:70px;padding:5px 7px;background:#210005;border:1px solid var(--red);color:#fff;font:800 8px ui-monospace,monospace;letter-spacing:.08em}
+body.meta #metaScene{background:#000!important;touch-action:none!important}
+body.meta .metaCore{width:340px!important;height:340px!important;top:44%!important}
+body.meta .metaGlyph{stroke-width:3.3!important;filter:none!important}
+body.meta .metaGlyph.front{opacity:1!important;stroke:#fff!important;filter:drop-shadow(0 0 4px rgba(255,255,255,.6))!important}
+body.meta .metaGlyph.back{opacity:.88!important;stroke:var(--red)!important;stroke-width:3.1!important;filter:drop-shadow(0 0 5px rgba(255,24,48,.7))!important}
+body.meta .metaRing{border-width:2px!important;border-color:rgba(255,255,255,.9)!important;box-shadow:0 0 8px rgba(255,255,255,.28)!important}
+body.meta .metaRing.r2{border-color:rgba(255,24,48,.92)!important;box-shadow:0 0 9px rgba(255,24,48,.4)!important}
+body.meta .metaEye{width:58px!important;height:58px!important;margin:-29px!important;border:2px solid #fff!important;box-shadow:0 0 18px rgba(255,255,255,.62),inset 0 0 20px rgba(255,24,48,.45)!important}
+body.meta .metaNode{width:78px!important;height:78px!important;margin:-39px!important;border:2px solid rgba(255,255,255,.92)!important;background:#000!important;color:#fff!important;font-size:9px!important;line-height:1.15!important;padding:8px!important;box-shadow:0 0 10px rgba(255,255,255,.25)!important;text-shadow:0 0 4px #000!important}
+body.meta .metaNode.selected{border-color:#fff!important;background:#151515!important;box-shadow:0 0 0 2px #fff,0 0 24px rgba(255,255,255,.72)!important;transform:none!important}
+body.meta .metaNode.hot{border-color:var(--red)!important;color:#fff!important;background:#160003!important;box-shadow:0 0 0 1px var(--red),0 0 20px rgba(255,24,48,.82)!important}
+body.meta #metaReadout{top:43.5%!important;width:270px!important}
+body.meta #metaType{font-size:10px!important;color:#eee!important;letter-spacing:.18em!important}
+body.meta #metaTitle{font-size:34px!important;font-weight:550!important;color:#fff!important;line-height:1!important;text-shadow:0 0 7px rgba(255,255,255,.4)!important}
+body.meta #metaState{font-size:10px!important;color:#eee!important;margin-top:8px!important}
+body.meta #metaHint{bottom:18px!important;font-size:9px!important;color:#eee!important;letter-spacing:.1em!important}
+body.meta #metaPanel{background:#000!important}
+body.meta #metaPanelShell{width:440px!important;height:440px!important;border:2px solid #fff!important;background:#000!important;padding:66px 58px!important;box-shadow:0 0 30px rgba(255,255,255,.18)!important}
+body.meta #metaPanelShell.round{padding:98px 88px!important}
+body.meta #metaPanelType{font-size:10px!important;color:#ddd!important}
+body.meta #metaPanelTitle{font-size:36px!important;font-weight:520!important;color:#fff!important}
+body.meta .metaRow{border-top-color:#555!important;color:#fff!important;font-size:11px!important;padding:10px 0!important}
+body.meta .metaActions button{border:2px solid #fff!important;background:#000!important;color:#fff!important;padding:9px 13px!important;font-size:9px!important}
+@media(max-width:720px){.shell{border-color:rgba(255,255,255,.8)!important}.hero{font-size:36px!important}#command,.dockBtn{border-color:rgba(255,255,255,.68)!important}}
