@@ -1,10 +1,11 @@
 {
   "channel": "prototype",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "project": "standalone-console",
   "updated": "2026-09-20",
   "state_model": "cloud-canonical",
   "viewport_model": ["desktop", "mobile", "meta"],
-  "backend": "supabase-ready",
-  "notes": "World sync client and SQL migration committed; project binding pending active Supabase tool surface."
+  "backend": "supabase-live",
+  "supabase_project_ref": "ouqnyndcubmhreqbwufe",
+  "notes": "WORLD sync is bound to the live Life Console Supabase project. Canonical object, view, link, event, archive, and pairing RPCs are installed and verified."
 }
