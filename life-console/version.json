@@ -1,7 +1,12 @@
 {
   "channel": "prototype",
-  "version": "0.9",
+  "version": "0.9.1",
   "project": "standalone-console",
-  "capabilities": ["universal-objects","local-files","pdf","image","video","audio","text","url","youtube","vimeo","google-preview","notes","chat-surface","terminal-surface","pwa"],
-  "updated": "2026-09-20"
+  "updated": "2026-09-20",
+  "notes": [
+    "visibility hotfix",
+    "Meta compatibility shim",
+    "service-worker cache disabled",
+    "layout namespace reset"
+  ]
 }
